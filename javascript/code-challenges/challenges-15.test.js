@@ -183,7 +183,28 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const helpCheck = (r1, c1, r2, c2, r3, c3) => {
+    let num;
+    if (board[r1][c1] === board[r2][c1] && board[r1][c1] === board[r3][c1]) {
+      num = true;
+    } else if (board[r1][c2] === board[r2][c2] && board[r1][c2] === board[r3][c2]) {
+      num = true;
+    } else if (board[r1][c3] === board[r2][c3] && board[r1][c3] === board[r3][c3]) {
+      num = true;
+    } else if (board[r1][c1] === board[r2][c2] && board[r1][c1] === board[r3][c3]) {
+      num = true;
+    } else if (board[r1][c3] === board[r2][c3] && board[r1][c3] === board[r3][c1]) {
+      num = true;
+    } else if (board[r2][c1] === board[r2][c2] && board[r2][c1] === board[r2][c3]) {
+      num = true;
+    } else if (board[r3][c1] === board[r3][c2] && board[r3][c1] === board[r3][c3]) {
+      num = true;
+    } else {
+      num = false;
+    }
+    return num;
+  };
+  return helpCheck(0, 0, 1, 1, 2, 2);
 };
 
 /* ------------------------------------------------------------------------------------------------
