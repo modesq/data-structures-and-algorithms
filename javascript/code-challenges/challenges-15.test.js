@@ -144,6 +144,12 @@ const sortBy = (property, arr) => {
         return (a.price - b.price);
       })
     );
+  } else if (property === "name") {
+    return (arr.sort((a, b) => {
+      return (
+        a.name.localeCompare(b.name)
+      );
+    }));
   }
 };
 
